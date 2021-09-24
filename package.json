@@ -4,10 +4,10 @@
   "description": "fullstackopen 2021",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
     "lint": "eslint .",
-    "test": "jest --verbose"
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand"
   },
   "author": "Lee Sager",
   "license": "MIT",
@@ -19,11 +19,10 @@
     "mongoose": "^6.0.7"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
-    "jest": "^27.2.1"
-  },
-  "jest": {
-    "testEnvironment": "node"
+    "jest": "^27.2.1",
+    "supertest": "^6.1.6"
   }
 }
